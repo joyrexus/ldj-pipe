@@ -1,0 +1,20 @@
+{
+  "name": "ldj-pipe",
+  "version": "0.0.1",
+  "description": "'Quick filter/transforms for line-delimited json'",
+  "main": "index.js",
+  "keywords": [
+    "'json",
+    "ldjson",
+    "stream",
+    "filter'"
+  ],
+  "scripts": {
+    "build": "coffee -o . -c src/index.coffee"
+  },
+  "author": "J. Voigt",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "split": "~0.2.10"
+  }
+}
