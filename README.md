@@ -48,6 +48,11 @@ We can then use the resulting filter as follows:
     filter.coffee < in.ldj > out.ldj
 
 
+## Install
+
+    npm install -g ldj-pipe
+
+
 ## See also
 
 * [logmap](https://github.com/hij1nx/logmap) which uses [JSONSelect](http://jsonselect.org) selection syntax.

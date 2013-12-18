@@ -16,5 +16,9 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "split": "~0.2.10"
+  },
+  "repository": { 
+    "type" : "git", 
+    "url" : "http://github.com/joyrexus/ldj-pipe.git"
   }
 }
