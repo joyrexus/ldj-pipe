@@ -1,6 +1,16 @@
 # ldj-pipe
 
+
 This module enables quick creation of unix-style filters for [line-delimited JSON](http://en.wikipedia.org/wiki/Line_Delimited_JSON).
+
+It provides the pipeline, you provide the filter ![filter](filter.gif):
+
+                        ldj-pipe
+                        +
+    LDJSON via STDIN -> FILTER -> STDOUT
+
+
+## Usage
 
 For example, suppose we're given the following input:
 
@@ -39,6 +49,12 @@ filter = (d) ->
 pipe.through filter
 ```
 
+So, the filter we define takes a single argument: a parsed line of JSON coming
+from upstream (STDIN).  You can then extract attributes from this object and return a transformed object to be sent downstream (STDOUT).
+
+The parsing and serialization for each line of JSON is handled for you.  All
+you need to do is specify how the filtering and transformation for a given line is to be done.
+
 We can then use the resulting filter as follows:
 
     cat in.ldj | filter.coffee > out.ldj
@@ -46,6 +62,10 @@ We can then use the resulting filter as follows:
 ... or:
 
     filter.coffee < in.ldj > out.ldj
+
+In general:
+
+    STREAM OF LDJSON | YOUR FILTER [ | FURTHER FILTERING ]
 
 
 ## Install
@@ -55,7 +75,14 @@ We can then use the resulting filter as follows:
 
 ## See also
 
+The `ldj-pipe` module streams STDIN through the filter you define to STDOUT.
+If you need to control the streams you're piping from and to, I'd recommend
+using [ldjson-stream](https://github.com/maxogden/ldjson-stream).
+
+The following command-line options are nice alternatives if you're filtering
+consists mostly of selecting attributes and reshaping them into some new form
+without a lot of conditional or calculational logic:
+
 * [logmap](https://github.com/hij1nx/logmap) which uses [JSONSelect](http://jsonselect.org) selection syntax.
 
-* [jq](http://stedolan.github.io/jq/)
-
+* [jq](http://stedolan.github.io/jq/) - like `sed` for JSON.
