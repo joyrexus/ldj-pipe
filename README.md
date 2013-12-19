@@ -1,9 +1,9 @@
 # ldj-pipe
 
 
-This module enables quick creation of unix-style filters for [line-delimited JSON](http://en.wikipedia.org/wiki/Line_Delimited_JSON).
+This module enables quick creation of unix-style [filters](http://en.wikipedia.org/wiki/Filter_(Unix)) for [line-delimited JSON](http://en.wikipedia.org/wiki/Line_Delimited_JSON).
 
-It provides the pipeline ...
+It provides the [pipeline](http://en.wikipedia.org/wiki/Pipeline_(Unix)) ...
 
     LDJSON via STDIN  >  FILTER  >  STDOUT
                          ******
