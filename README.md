@@ -53,7 +53,7 @@ pipe.through filter
 ```
 
 So, the filter we define takes a single argument: a parsed line of JSON coming
-from upstream (STDIN).  You can then extract attributes from this object and return a transformed object to be sent downstream (STDOUT).
+from upstream (stdin).  You can then extract attributes from this object and return a transformed object to be sent downstream (stdout).
 
 The parsing and serialization for each line of JSON is handled for you.  All
 you need to do is specify how the filtering and transformation for a given line is to be done.
