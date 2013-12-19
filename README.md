@@ -88,4 +88,4 @@ without a lot of conditional or calculational logic:
 
 * [logmap](https://github.com/hij1nx/logmap) which uses [JSONSelect](http://jsonselect.org) selection syntax.
 
-* [jq](http://stedolan.github.io/jq/) - like `sed` for JSON.
+* [jq](http://stedolan.github.io/jq/) - like `sed` for JSON. [This gist](https://gist.github.com/joyrexus/7218817) demonstrates how it can be used to filter and transform incoming sensor data from a Leap Motion device.
