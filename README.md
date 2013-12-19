@@ -3,11 +3,14 @@
 
 This module enables quick creation of unix-style filters for [line-delimited JSON](http://en.wikipedia.org/wiki/Line_Delimited_JSON).
 
-It provides the pipeline, you provide the filter ![filter](filter.gif):
+It provides the pipeline ...
 
-                        ldj-pipe
-                        +
-    LDJSON via STDIN -> FILTER -> STDOUT
+    LDJSON via STDIN  >  FILTER  >  STDOUT
+                         ******
+
+... and you provide the filter to pipe each line of JSON through: 
+
+![filter](filter.gif)
 
 
 ## Usage
