@@ -12,7 +12,8 @@ pipe.through = (filter) ->
   trans._transform = (data, enc, done) ->
     if data
       data = JSON.parse data
-      @push JSON.stringify(filter data) + "\n"
+      result = filter data
+      @push JSON.stringify(result) + "\n" if result
     done()
 
   stdin

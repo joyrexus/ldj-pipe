@@ -16,9 +16,13 @@
 
   pipe.through = function(filter) {
     trans._transform = function(data, enc, done) {
+      var result;
       if (data) {
         data = JSON.parse(data);
-        this.push(JSON.stringify(filter(data)) + "\n");
+        result = filter(data);
+        if (result) {
+          this.push(JSON.stringify(result) + "\n");
+        }
       }
       return done();
     };
